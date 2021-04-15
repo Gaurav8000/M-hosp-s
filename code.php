@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 include('firebase/dbcon.php');
 
@@ -20,16 +20,3 @@ if(isset($_POST['send_message']))
 $postRef = $database->getReference($ref_table)->push($postData);
 
 }
-if($postRef)
-{
-    $_SESSION['status'] = "data is inserted successfully";
-
-}
-else
-{
-    $_SESSION['status'] = "data is inserted not successfully";
-
-}
-
-
-?>
